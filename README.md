@@ -1,12 +1,23 @@
-# YOLOv8_segmentation
-This code is targeted at the processing of medical imaging data—in particular, the DICOM and NRRD files—required for training a YOLOv8 segmentation model targeting regions of interest detection in the rectum project data. Extracting data, it saves images together with their labels, training a model, and evaluating it is all done without missing several result visualizations and model prediction comparisons against ground truth data.
+## Introduction
+This is a medical imaging data processing project focused on DICOM and NRRD files for training a YOLOv8 segmentation model to detect regions of interest in the rectum project data. This whole pipeline contains data extraction, image labeling, model training, and evaluation. Special emphasis has been given to the visualization of results and comparison of model predictions against ground truth data.
 
-Analysis of Results
+![image](https://github.com/user-attachments/assets/d4f1be49-598e-446e-8745-7c57f9aa583f)
+|:-:|
+|YOLOv8 Architecture
 
-Data Preparation: Successfully extracts and processes frames from DICOM and NRRD files, creating labeled datasets for training, validation, and testing.
+## Data Preparation
+The data preparation phase involves the successful extraction and processing of frames from DICOM and NRRD files. This step creates labeled datasets, which are then divided into training, validation, and testing sets. Ensuring accurate and comprehensive data labeling is crucial for the effective training of the segmentation model.
 
-Model Training: Utilizes YOLOv8 for segmentation, showing efficient use of GPU resources if available.
+![image](https://github.com/user-attachments/assets/8322e799-8607-4f48-bb4e-af61b89b5544)
+|:-:|
+|Mask samples
 
-Visual Outputs: This provides detailed visualization of training progress and model performance to understand the model's accuracy and areas for improvement.
+## Hyperparameters and Training
+In this phase, segmentation is done with the help of YOLOv8; it efficiently makes use of available resources on the GPUs to speed up computation. Other key hyperparameters, such as learning rate, batch size, and number of epochs, could also be tuned to show the model's potential. Observatory practices on training progress in terms of loss curves and accuracy metrics are employed to aid in fine-tuning these parameters.
 
-Prediction and Evaluation: Show how an already trained model could be loaded, how to make predictions, and include in it a method for running the predictions beside the truth data to show model accuracy.
+## Evaluation Metrics and Results 
+The testing phase demonstrates how to load a trained model and generate a prediction. It evaluates the model against standard metrics: precision, recall, IoU. Added a method for making predictions with ground truth data to facilitate visual inspection of the model's accuracy. Detailed visualization outputs are provided to understand how well or badly your model works—shows comparisons between predicted segmentations and true labels. This paper presents a full pipeline of medical image segmentation based on YOLOv8, from data preparation to model evaluation, while putting much emphasis on result visualization and accuracy assessment.
+
+![image](https://github.com/user-attachments/assets/2c7f4142-3305-4dd0-ae30-bef2b82c9c0b)
+|:-:|
+|Percision-Confidence Curve
